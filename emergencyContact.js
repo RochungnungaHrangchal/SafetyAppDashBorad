@@ -8,7 +8,10 @@ var x=document.getElementById("emergencydiv");
 
 if(isNaN(searchTxt))
 {
-     document.getElementById("demo").innerHTML="Incorrect Phone Number Format ";
+     swal({title: "Incorrect Phone Number Format",
+  text: "Please check the Number and try again...",
+  icon: "warning",
+  button: "OK",});
      x.style.display = "none";
      dataSetEmergency.length=0;
 
@@ -16,14 +19,17 @@ if(isNaN(searchTxt))
 
 else if(searchTxt.length != 10)
 {
-	document.getElementById("demo").innerHTML="Invalid Phone Number";
+	swal({title: "Incorrect Phone Number",
+  text: "Please check the Number and try again...",
+  icon: "warning",
+  button: "OK",});
 	x.style.display = "none";
 	dataSetEmergency.length=0;
 	
 }
 else
 {
-	 document.getElementById("demo").innerHTML="";
+	 //document.getElementById("demo").innerHTML="";
 	 x.style.display = "block";
 	 var searchNumber="+91" + searchTxt;
 	 
@@ -50,14 +56,22 @@ else
 	   }	
 	   else
 	   {
-		  document.getElementById("demo").innerHTML="No Records Found"; 
+		  swal({title: "Emergency Contact not Found!",
+  text: "Please check the Number and try again...",
+  icon: "warning",
+  button: "OK",});
+		  //document.getElementById("demo").innerHTML="No Records Found"; 
 		  x.style.display = "none";
 		  dataSetEmergency.length=0;
 	   }
 	
  }).catch(function(error) {
 	  
-   document.getElementById("demo").innerHTML=error;
+   swal({title: "Quota Exceeded !",
+  text: "Please Upgrade your Billing Account...",
+  icon: "info",
+  button: "OK",});
+   //document.getElementById("demo").innerHTML=error;
    x.style.display = "none";
 });
   

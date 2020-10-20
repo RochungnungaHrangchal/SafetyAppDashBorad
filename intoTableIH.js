@@ -27,6 +27,9 @@ dataReference.collection("IncomingHelp").get().then((queryData) => {
 	
  }).catch(function(error) {
 	  
- document.getElementById("demo").innerHTML=error;
+  swal({title: "Quota Exceeded !",
+  text: "Please Upgrade your Billing Account...",
+  icon: "info",
+  button: "OK",});
  
  });

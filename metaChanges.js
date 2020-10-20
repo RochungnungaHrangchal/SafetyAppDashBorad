@@ -7,6 +7,9 @@ dataReference.collection("Counters").doc("1")
 		    document.getElementById("psnos").innerHTML=doci.get("PoliceStationCounts");
                 })..catch(function(error) {
 	  
-					document.getElementById("demo").innerHTML=error;
+					 swal({title: "Quota Exceeded !",
+  text: "Please Upgrade your Billing Account...",
+  icon: "info",
+  button: "OK",});
  
  });
